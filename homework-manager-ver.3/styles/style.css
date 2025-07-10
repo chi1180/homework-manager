@@ -1,0 +1,212 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+  color: #1a1a1a;
+  font-family: "Inter", "sans-serif";
+  text-decoration: none;
+  list-style: none;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+}
+
+body {
+  width: 100vw;
+  height: 400vh;
+  background-color: #eaeaea;
+  position: relative;
+}
+body nav {
+  width: 10vh;
+  height: 100vh;
+  padding: 1.4285714286vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+body nav ul {
+  width: 100%;
+  height: 100%;
+  margin-top: 10.7142857143vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body nav ul li {
+  width: 100%;
+  margin-bottom: 3.5714285714vh;
+}
+body nav ul li a {
+  width: 100%;
+  padding-bottom: 0.3125vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body nav ul li a .section-icon {
+  width: 100%;
+  height: 7.1428571429vh;
+  background-size: cover;
+  margin-bottom: 0.5vh;
+}
+body nav ul li a .section-name {
+  width: 100%;
+  font-size: 1.25vh;
+  text-align: center;
+}
+body nav ul li a[href="#dashboard"] .section-icon {
+  background-image: url("../image-assets/dashboard.svg");
+}
+body nav ul li a[href="#calendar"] .section-icon {
+  background-image: url("../image-assets/calendar.svg");
+}
+body nav ul li a[href="#homework"] .section-icon {
+  background-image: url("../image-assets/homework.svg");
+}
+body nav ul li a[href="#setting"] .section-icon {
+  background-image: url("../image-assets/setting.svg");
+}
+body nav ul li a[class=selecting] {
+  border-bottom: 0.3125vh solid #1a1a1a;
+}
+body main {
+  width: calc(100vw - 10vh);
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+body main section {
+  width: 100%;
+  height: 100vh;
+}
+body main section header {
+  width: 100%;
+  height: 7.1428571429vh;
+  padding-left: 10.7142857143vh;
+  background-color: #d9d9d9;
+  font-size: 3.125vh;
+  display: flex;
+  align-items: center;
+}
+body main section .section-main {
+  width: calc(100% - 0.3125vh);
+  height: 92.8571428571vh;
+  border-top: 0.3125vh solid #eaeaea;
+  border-bottom: 0.3125vh solid #eaeaea;
+  display: flex;
+}
+body main section .section-main .base-container {
+  width: 80%;
+}
+body main section .section-main .extension-container {
+  width: 20%;
+  border-left: 0.3125vh solid #eaeaea;
+}
+body main section .section-main .base-container,
+body main section .section-main .extension-container {
+  height: 100%;
+  background-color: #d9d9d9;
+  transition: 0.3s ease-in;
+}
+body main section .section-main .base-container .homework-list-container,
+body main section .section-main .extension-container .homework-list-container {
+  width: 100%;
+  height: 99%;
+  padding: 1%;
+  overflow-y: scroll;
+}
+body main section .section-main .base-container .homework-list-container .view-controller-container,
+body main section .section-main .extension-container .homework-list-container .view-controller-container {
+  width: 100%;
+  height: 6%;
+  display: flex;
+  justify-content: end;
+}
+body main section .section-main .base-container .homework-list-container .view-controller-container .view-controller,
+body main section .section-main .extension-container .homework-list-container .view-controller-container .view-controller {
+  width: 8.3333333333vh;
+  height: 100%;
+  background-color: #eaeaea;
+  border-radius: 0.8333333333vh;
+  background-size: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+body main section .section-main .base-container .homework-list-container .view-controller-container .list-view,
+body main section .section-main .extension-container .homework-list-container .view-controller-container .list-view {
+  background-image: url("../image-assets/view-list.svg");
+}
+body main section .section-main .base-container .homework-list-container .view-controller-container .card-view,
+body main section .section-main .extension-container .homework-list-container .view-controller-container .card-view {
+  background-image: url("../image-assets/view-card.svg");
+}
+body main section .section-main .base-container .list .homework-list,
+body main section .section-main .extension-container .list .homework-list {
+  width: 100%;
+  height: 7%;
+  background-color: #eaeaea;
+  border-radius: 0.8333333333vh;
+  margin: 1% 0;
+}
+body main section .section-main .base-container .list .homework-list .head,
+body main section .section-main .extension-container .list .homework-list .head {
+  width: 100%;
+  height: 100%;
+  padding: 0.6%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+body main section .section-main .base-container .list .homework-list .head .left-contents,
+body main section .section-main .extension-container .list .homework-list .head .left-contents {
+  width: 70%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+body main section .section-main .base-container .list .homework-list .head .left-contents .completed-check-mark,
+body main section .section-main .extension-container .list .homework-list .head .left-contents .completed-check-mark {
+  /* Width and height are adjusted in javascript. */
+}
+body main section .section-main .base-container .list .homework-list .head .homework-controller-container,
+body main section .section-main .extension-container .list .homework-list .head .homework-controller-container {
+  width: 30%;
+}
+body main section .section-main .base-container .list .homework-list .head .left-contents,
+body main section .section-main .base-container .list .homework-list .head .homework-controller-container,
+body main section .section-main .extension-container .list .homework-list .head .left-contents,
+body main section .section-main .extension-container .list .homework-list .head .homework-controller-container {
+  display: flex;
+  align-items: center;
+}
+body main section .section-main .extension-container.has-controller {
+  position: relative;
+}
+body main section .section-main .extension-container.has-controller .extension-controller {
+  width: 1.25vh;
+  height: 4.5454545455vh;
+  background-color: #eaeaea;
+  background-image: url("../image-assets/extension.svg");
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+  transition: 0.3s ease-in;
+  position: absolute;
+  top: 88%;
+  left: 0;
+}
+body main section .section-main .extension-container.has-controller .extension-controller:hover {
+  width: 2.5vh;
+}
+body main section .section-main.extend .base-container {
+  width: 60%;
+}
+body main section .section-main.extend .extension-container {
+  width: 40%;
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,452 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: serif;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+    list-style: none;
+}
+
+body {
+    width: 100%;
+    height: 400vh;
+    position: relative;
+    overflow: hidden;
+}
+
+nav {
+    width: 200px;
+    height: calc(100vh - 70px);
+    padding-top: 70px;
+    position: sticky;
+    top: 0;
+    left: 0;
+    border-right: 1px solid black;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+}
+
+nav a li {
+    width: 100%;
+    padding: 35px 0;
+    text-align: center;
+    border-top: 1px solid black;
+}
+
+.border-bottom {
+    border-bottom: 1px solid black;
+}
+
+nav a li:hover {
+    background-color: lightgray;
+}
+
+section {
+    width: calc(100% - 200px - 1px);
+    height: 100vh;
+    position: absolute;
+    right: 0;
+}
+
+header {
+    height: 70px;
+    width: 100%;
+    border-bottom: 1px solid black;
+    position: relative;
+}
+
+main {
+    width: 100%;
+    height: calc(100% - 70px);
+}
+
+header .title {
+    font-size: 1.8rem;
+    line-height: 70px;
+    padding-left: 35px;
+}
+
+header .operation {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+}
+
+header .operation img {
+    width: 25px;
+    height: 25px;
+    margin-left: 25px;
+    padding: 10px;
+    cursor: pointer;
+    box-shadow: 1px 1px 1px black, -1px -1px 1px black;
+}
+
+header .operation img:last-child {
+    margin-right: 25px;
+}
+
+header .operation input {
+    font-size: 1.2rem;
+}
+
+header .operation span {
+    width: 68px;
+    height: 32px;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 32px;
+    position: relative;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+header .operation span .btn {
+    width: 29px;
+    height: 29px;
+    background-color: black;
+    border-radius: 50%;
+    border: 1px solid black;
+    position: absolute;
+    margin: 1px;
+}
+
+#manager {
+    top: 0;
+}
+
+#manager main {
+    display: flex;
+}
+
+#manager main div {
+    width: 50%;
+    height: 100%;
+}
+
+#manager main div .title {
+    font-size: 1.2rem;
+    height: 55px;
+    line-height: 55px;
+    padding-left: 25px;
+}
+
+ul {
+    width: calc(100% - 10px);
+    height: calc(100% - 70px);
+    padding: 5px;
+    padding-bottom: 0;
+    margin-bottom: 10px;
+    overflow-y: scroll;
+}
+
+ul li {
+    width: 95%;
+    padding: 5px 0;
+    padding-left: 10px;
+    margin: 3px auto;
+    border-left: 5px solid black;
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    border-radius: 7px;
+    position: relative;
+}
+
+ul li p {
+    width: 90%;
+    overflow: hidden;
+}
+
+ul li img {
+    width: 15px;
+    height: 15px;
+    padding: 3px;
+    cursor: pointer;
+}
+
+ul li img:last-child {
+    margin: 0 10px;
+}
+
+ul li div {
+    display: inline;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 37px;
+    display: flex;
+    align-items: center;
+    padding-right: 30px;
+}
+
+#calender {
+    top: 100vh;
+}
+
+.day-container {
+    width: calc(100% - 10px);
+    height: 20px;
+    padding: 10px 0;
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.day {
+    width: calc(100% / 7);
+    text-align: start;
+    font-size: 1.1rem;
+}
+
+.calender {
+    width: calc(100% - 20px);
+    height: calc(100% - 61px);
+    padding: 10px;
+    overflow-y: scroll;
+}
+
+.week {
+    width: 100%;
+    height: calc(100% / 6);
+    display: flex;
+}
+
+.by-week {
+    height: 100% !important;
+}
+
+.date-box {
+    height: calc(100% - 10px);
+    width: calc(100% / 7 - 10px);
+    padding: 5px;
+    overflow: scroll;
+    position: relative;
+    cursor: default;
+}
+
+.hover-box {
+    transition: 0.3s;
+}
+
+.hover-box:hover {
+    background-color: lightgray;
+}
+
+.fixed-board::after {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "";
+    background-color: black;
+    opacity: 0.6;
+}
+
+.homework-list-container {
+    width: 400px;
+    height: 100vh;
+    position: absolute;
+    top: 100vh;
+    right: -410px;
+    background-color: white;
+}
+
+@keyframes showHomeworkListContainer {
+    0% {
+        right: -410px;
+    }
+    100% {
+        right: 0;
+    }
+}
+
+@keyframes hiddenHomeworkListContainer {
+    0% {
+        right: 0;
+    }
+    100% {
+        right: -410px;
+    }
+}
+
+.label {
+    font-size: 50%;
+    width: calc(90% - 5px);
+    padding-left: 10px;
+    margin: auto;
+    height: fit-content;
+    border-radius: 5px;
+    border: 1px solid black;
+    border-left: 5px solid black;
+    overflow-x: hidden;
+    margin: 2px 0;
+}
+
+.label-today {
+    width: 50%;
+    padding: 0;
+    text-align: center;
+    background-color: black;
+    color: white;
+    position: absolute;
+    top: 10px;
+    right: 5px;
+}
+
+#homework {
+    top: 200vh;
+}
+
+#homework main .homework-much {
+    height: 20px;
+    width:calc(100% - 30px);
+    text-align: end;
+    margin: 5px 0;
+}
+
+#homework-much {
+    display: inline;
+}
+
+#homework main {
+    height: calc(100% - 65px);
+}
+
+#setting {
+    top: 300vh;
+}
+
+.sec-title {
+    font-size: 1.4rem;
+    width: fit-content;
+    padding: 0 30px 0 15px;
+    margin-left: 15px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid black;
+}
+
+.sec {
+    width: calc(100% - 20px);
+    padding: 0 5px 0 15px;
+}
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.theme-btn {
+    width: 150px;
+    height: 31px;
+    line-height: 31px;
+    border-radius: 7px;
+    border: 1px solid black;
+    background-color: white;
+    margin: 5px;
+}
+
+.theme {
+    width: 150px;
+    height: 30px;
+    line-height: 30px;
+    background-color: white;
+    color: black;
+    text-align: center;
+    border: none;
+    border-radius: 7px;
+    border: 1px solid red;
+    margin: 5px;
+}
+
+.theme, .theme * {
+    cursor: pointer;
+}
+
+.sec input {
+    margin: 10px;
+}
+
+.back-board {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-image: url("imgs/study.jpg");
+    background-size: cover;
+    background-position: center;
+    animation: showBoard 0.3s linear;
+    z-index: 2;
+}
+
+@keyframes showBoard {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes hiddenBoard {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.back-board * {
+    border-radius: 5px;
+    border: 1px solid black;
+    display: block;
+    margin: 15px auto;
+    width: 450px;
+}
+
+.back-board input, .back-board select {
+    height: 25px;
+    padding-left: 10px;
+    background-color: white;
+}
+
+.back-board select {
+    border-left: 5px solid black;
+}
+
+.back-board textarea {
+    height: 250px;
+    padding: 5px;
+    background-color: white;
+}
+
+.back-board div {
+    border: none;
+    display: flex;
+}
+
+.back-board button {
+    background-color: white;
+    height: 25px;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.back-board button:last-child {
+    background-color: black;
+    color: white;
+    border: 1px solid white;
+}
+

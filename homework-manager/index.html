@@ -1,0 +1,136 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <a href="#manager"><li>MANAGER</li></a>
+        <a href="#calender"><li>CALENDER</li></a>
+        <a href="#homework"><li>HOMEWORK</li></a>
+        <a href="#setting"><li class="border-bottom">SETTING</li></a>
+    </nav>
+
+    <section id="manager">
+        <header>
+            <div class="title">Manager</div>
+        </header>
+        <main>
+            <div>
+                <div class="title">Today homework</div>
+                <ul id="today-homework-container"></ul>
+            </div>
+            <div>
+                <div class="title">Near day homework</div>
+                <ul id="near-homework-container"></ul>
+            </div>
+        </main>
+    </section>
+
+    <section id="calender">
+        <header>
+            <div class="title">Calender</div>
+            <div class="operation">
+                <span title="look by week" id="toggle-button">
+                    <div class="btn"></div>
+                </span>
+                <input type="date" class="calenderinput" id="calenderInput">
+                <img src="imgs/back.png" alt="month to back" onclick="changeMonth(-1)">
+                <img src="imgs/fd.png" alt="month to followed" onclick="changeMonth(1)">
+            </div>
+        </header>
+        <main>
+            <div class="day-container">
+                <div class="day">Sun</div>
+                <div class="day">Mon</div>
+                <div class="day">Tue</div>
+                <div class="day">Wed</div>
+                <div class="day">Thu</div>
+                <div class="day">Fri</div>
+                <div class="day">Sat</div>
+            </div>
+            <div class="calender"></div>
+        </main>
+    </section>
+
+    <ul class="homework-list-container"></ul>
+
+    <section id="homework">
+        <header>
+            <div class="title">Homework</div>
+            <div class="operation">
+                <img src="imgs/add.png" alt="add homework" onclick="addHomework()">
+            </div>
+        </header>
+        <main>
+            <div class="homework-much">all&nbsp;&#58;&nbsp;<div id="homework-much">0</div></div>
+            <ul></ul>
+        </main>
+    </section>
+
+    <section id="setting">
+        <header>
+            <div class="title">Setting</div>
+        </header>
+        <main>
+            <div class="sec-title">Change the theme</div>
+            <div class="sec flex" id="theme">
+                <div class="theme" style="border-color: black;">
+                    <label for="black">BLACK</label>
+                    <input type="radio" name="theme" id="black">
+                </div>
+                <div class="theme" style="border-color: purple; color: purple;">
+                    <label for="purple">PURPLE</label>
+                    <input type="radio" name="theme" id="purple">
+                </div>
+                <div class="theme" style="border-color: blue; color: blue;">
+                    <label for="blue">BLUE</label>
+                    <input type="radio" name="theme" id="blue">
+                </div>
+                <div class="theme" style="border-color: cadetblue; color: cadetblue;">
+                    <label for="cadetblue">CADETBLUE</label>
+                    <input type="radio" name="theme" id="cadetblue">
+                </div>
+                <div class="theme" style="border-color: green; color: green;">
+                    <label for="green">GREEN</label>
+                    <input type="radio" name="theme" id="green">
+                </div>
+                <div class="theme" style="border-color: orange; color: orange;">
+                    <label for="orange">ORANGE</label>
+                    <input type="radio" name="theme" id="orange">
+                </div>
+                <div class="theme" style="border-color: red; color: red;">
+                    <label for="red">RED</label>
+                    <input type="radio" name="theme" id="red">
+                </div>
+                <button class="theme-btn" onclick="changeTheme()">テーマを適用する</button>
+            </div>
+
+            <div class="sec-title">Import or export the homework data</div>
+            <div class="sec flex">
+                <div style="width: 100%;">
+                    Import:
+                    <input type="file" accept=".json" id="importFileInput">
+                    <button onclick="importHomeworkDataCsvFile()">Import</button>
+                </div>
+                <div style="width: 100%;">
+                    Export:
+                    <button onclick="exportHomeworkDataCsvFile()">Export a homework-data.csv</button>
+                </div>
+            </div>
+
+            <div class="sec-title">Help</div>
+            <div class="sec">
+                <a href="doc.html" target="_blank">Documentation</a>
+            </div>
+        </main>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

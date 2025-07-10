@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Homework Manager</title>
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
+
+<body>
+<nav>
+    <ul>
+        <li>
+            <a href="#dashboard" title="Dashboard">
+                <div class="section-icon"></div>
+                <p class="section-name">Dashboard</p>
+            </a>
+        </li>
+        <li>
+            <a href="#calendar" title="Calendar">
+                <div class="section-icon"></div>
+                <p class="section-name">Calendar</p>
+            </a>
+        </li>
+        <li>
+            <a href="#homework" title="Homework">
+                <div class="section-icon"></div>
+                <p class="section-name">Homework</p>
+            </a>
+        </li>
+        <li>
+            <a href="#setting" title="Setting">
+                <div class="section-icon"></div>
+                <p class="section-name">Setting</p>
+            </a>
+        </li>
+    </ul>
+</nav>
+
+<main>
+    <section id="dashboard">
+        <header>Dashboard</header>
+        <div class="section-main extend">
+            <div class="base-container">
+
+            </div>
+            <div class="extension-container">
+
+            </div>
+        </div>
+    </section>
+
+    <section id="calendar">
+        <header>Calendar</header>
+        <div class="section-main">
+            <div class="base-container">
+
+            </div>
+            <div class="extension-container has-controller">
+                <div class="extension-controller" title="extend"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="homework">
+        <header>Homework</header>
+        <div class="section-main">
+            <div class="base-container">
+                <ul class="homework-list-container list">
+                    <li class="view-controller-container"><div class="view-controller list-view"></div></li>
+
+                    <li class="homework-list">
+                        <div class="head">
+                            <div class="left-contents">
+                                <label>
+                                    <input type="checkbox" class="completed-check-mark">
+                                </label>
+
+                                <p class="homework-title">This is a homework</p>
+                            </div>
+
+                            <div class="homework-controller-container">
+                                <span class="edit"></span>
+                                <span class="remove"></span>
+                                <span class="show"></span>
+                            </div>
+                        </div>
+
+                        <p class="homework-description">This is a description<br>About<br><br>This homework</p>
+
+                        <p class="homework-due-date">2024/09/25</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="extension-container has-controller">
+                <div class="extension-controller" title="extend"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="setting">
+        <header>Setting</header>
+        <div class="section-main extend">
+            <div class="base-container">
+
+            </div>
+            <div class="extension-container">
+
+            </div>
+        </div>
+    </section>
+</main>
+
+<script src="scripts/dist/script.js" type="module"></script>
+</body>
+</html>
+

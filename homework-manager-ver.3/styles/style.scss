@@ -1,0 +1,280 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+
+$main-color: #d9d9d9;
+$accent-color: #eaeaea;
+$font-color: #1a1a1a;
+
+$dashboard-icon-url: url('../image-assets/dashboard.svg');
+$calendar-icon-url: url('../image-assets/calendar.svg');
+$homework-icon-url: url('../image-assets/homework.svg');
+$setting-icon-url: url('../image-assets/setting.svg');
+
+$extension-icon-controller-url: url('../image-assets/extension.svg');
+
+$list-view-icon-url: url('../image-assets/view-list.svg');
+$card-view-icon-url: url('../image-assets/view-card.svg');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+
+    color: $font-color;
+    font-family: "Inter", "sans-serif";
+    text-decoration: none;
+    list-style: none;
+
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100vw;
+    height: 400vh;
+    background-color: $accent-color;
+
+    position: relative;
+
+    nav {
+        width: calc(100vh / 10);
+        height: 100vh;
+        padding: calc(100vh / 70);
+
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        ul {
+            width: 100%;
+            height: 100%;
+            margin-top: calc(100vh / 14 * 1.5);
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            li {
+                width: 100%;
+                margin-bottom: calc(100vh / 28);
+                a {
+                    width: 100%;
+                    padding-bottom: calc(100vh / 320);
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+
+                    .section-icon {
+                        width: 100%;
+                        height: calc(100vh / 14);
+                        background-size: cover;
+                        margin-bottom: calc(100vh / 200);
+                    }
+
+                    .section-name {
+                        width: 100%;
+                        font-size: calc(100vh / 80);
+                        text-align: center;
+                    }
+
+                    &[href="#dashboard"] {
+                        .section-icon {
+                            background-image: $dashboard-icon-url;
+                        }
+                    }
+
+                    &[href="#calendar"] {
+                        .section-icon {
+                            background-image: $calendar-icon-url;
+                        }
+                    }
+
+                    &[href="#homework"] {
+                        .section-icon {
+                            background-image: $homework-icon-url;
+                        }
+                    }
+
+                    &[href="#setting"] {
+                        .section-icon {
+                            background-image: $setting-icon-url;
+                        }
+                    }
+
+                    &[class="selecting"] {
+                        border-bottom: calc(100vh / 320) solid $font-color;
+                    }
+                }
+            }
+        }
+    }
+
+    main {
+        width: calc(100vw - 100vh / 10);
+        height: 100vh;
+
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        section {
+            width: 100%;
+            height: 100vh;
+
+            header {
+                width: 100%;
+                height: calc(100vh / 14);
+                padding-left: calc(100vh / 14 * 1.5);
+                background-color: $main-color;
+
+                font-size: calc(100vh / 32);
+
+                display: flex;
+                align-items: center;
+            }
+
+            .section-main {
+                width: calc(100% - 100vh / 320);
+                height: calc(100vh - 100vh / 14);
+                border-top: calc(100vh / 320) solid $accent-color;
+                border-bottom: calc(100vh / 320) solid $accent-color;
+
+                display: flex;
+
+                .base-container {
+                    width: 80%;
+                }
+
+                .extension-container {
+                    width: 20%;
+                    border-left: calc(100vh / 320) solid $accent-color;
+                }
+
+                .base-container,
+                .extension-container {
+                    height: 100%;
+                    background-color: $main-color;
+                    transition: .3s ease-in;
+
+                    .homework-list-container {
+                        width: 100%;
+                        height: 99%;
+                        padding: 1%;
+                        overflow-y: scroll;
+
+                        .view-controller-container {
+                            width: 100%;
+                            height: 6%;
+                            display: flex;
+                            justify-content: end;
+
+                            .view-controller {
+                                width: calc(100vh / 12);
+                                height: 100%;
+                                background-color: $accent-color;
+                                border-radius: calc(100vh / 120);
+
+                                background-size: 50%;
+                                background-position: center;
+                                background-repeat: no-repeat;
+
+                                cursor: pointer;
+                            }
+
+                            .list-view {
+                                background-image: $list-view-icon-url;
+                            }
+
+                            .card-view {
+                                background-image: $card-view-icon-url;
+                            }
+                        }
+                    }
+
+                    .list {
+                        .homework-list {
+                            width: 100%;
+                            height: 7%;
+                            background-color: $accent-color;
+                            border-radius: calc(100vh / 120);
+                            margin: 1% 0;
+
+                            .head {
+                                width: 100%;
+                                height: 100%;
+                                padding: .6%;
+
+                                display: flex;
+                                align-items: center;
+                                justify-content: space-evenly;
+
+                                .left-contents {
+                                    width: 70%;
+                                    height: 100%;
+
+                                    display: flex;
+                                    align-items: center;
+
+                                    .completed-check-mark {
+                                        /* Width and height are adjusted in javascript. */
+                                    }
+                                }
+
+                                .homework-controller-container {
+                                    width: 30%;
+                                }
+
+                                .left-contents,
+                                .homework-controller-container {
+                                    display: flex;
+                                    align-items: center;
+                                }
+                            }
+                        }
+                    }
+
+                    .card {
+                        // TODO
+                    }
+                }
+
+                .extension-container.has-controller {
+                    position: relative;
+
+                    .extension-controller {
+                        width: calc(100vh / 80);
+                        height: calc(100vh / 22);
+                        background-color: $accent-color;
+                        background-image: $extension-icon-controller-url;
+                        background-size: cover;
+                        background-position: center;
+
+                        cursor: pointer;
+                        transition: .3s ease-in;
+
+                        position: absolute;
+                        top: 88%;
+                        left: 0;
+
+                        &:hover {
+                            width: calc(100vh / 40);
+                        }
+                    }
+                }
+            }
+
+            .section-main.extend {
+                .base-container {
+                    width: 60%;
+                }
+
+                .extension-container {
+                    width: 40%;
+                }
+            }
+        }
+    }
+}
+

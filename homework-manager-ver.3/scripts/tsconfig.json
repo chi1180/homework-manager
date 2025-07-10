@@ -1,0 +1,13 @@
+{
+    "files": ["./script.ts", "./nav.ts", "extension-controller.ts", "homework.ts"],
+    "compilerOptions": {
+        "target": "ES6",
+        "module": "ES6",
+        "moduleResolution": "node",
+        "allowSyntheticDefaultImports": true,
+        "outDir": "./dist"
+    },
+    "compileOnSave": true,
+    "include": ["./@types/index.d.ts"]
+}
+
